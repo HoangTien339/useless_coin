@@ -1,0 +1,16 @@
+version: '3'
+services:
+  web:
+    build:
+      context: ./.docker/web
+      dockerfile: build/Dockerfile
+    ports:
+    - "3000:3000"
+    volumes:
+    - .:/var/www/app
+    links:
+    - redis
+  redis:
+    image: redis:5.0.5
+    ports:
+      - "6379:6379"
