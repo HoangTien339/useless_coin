@@ -10,6 +10,7 @@ services:
     - .:/var/www/app
     links:
     - redis
+
   redis:
     image: redis:5.0.5
     ports:
